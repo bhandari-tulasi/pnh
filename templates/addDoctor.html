@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+   <section>
+        <div class="addDoctor">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+   </section>
+
+
+
+{% endblock content %}
+
+
+
+

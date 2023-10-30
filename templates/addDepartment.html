@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section>
+  <div class="addDepartment">
+    <h3>Add Department</h3>
+    <form method="post" action="#">
+      {% csrf_token %} {{form}}
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</section>
+
+{% endblock content %}

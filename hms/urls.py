@@ -6,4 +6,6 @@ app_name = "hms"
 
 urlpatterns = [
     path('', dashboard, name='dashboard'),
+    path('addDepartment/', addDepartment, name='addDepartment'),
+    path('addDoctors/',addDoctor, name='addDoctor'),
 ]
