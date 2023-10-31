@@ -42,3 +42,17 @@ def addDoctor(request):
     }   
 
     return render(request, 'addDoctor.html', context)     
+
+
+def patientRegister(request):
+    form = NewPatientForm()
+
+    if request.method =='POST':
+        form = NewPatientForm(request.POST)
+        if form.is_valid():
+         form.save()
+
+    context = {
+        'form':form
+    }
+    return render(request, 'hms/register-patient.html', context)

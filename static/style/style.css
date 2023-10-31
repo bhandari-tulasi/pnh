@@ -110,4 +110,12 @@ a {
   bottom:0;
   width:100%;
 }  */
+.patient-form{
+  display:flex;
+  flex-wrap: wrap;
+}
 
+.form-floating{
+  display: flex;
+  flex-wrap: wrap;
+}
