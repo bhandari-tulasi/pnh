@@ -1,5 +1,7 @@
 from django.shortcuts import render
+
 from .forms import *
+from . models import NewPatient
 # Create your views here.
 def dashboard(request):
     
@@ -51,8 +53,19 @@ def patientRegister(request):
         form = NewPatientForm(request.POST)
         if form.is_valid():
          form.save()
+         form = NewPatientForm()
 
     context = {
         'form':form
     }
     return render(request, 'hms/register-patient.html', context)
+
+def listPatientView(request):
+    patient_data = NewPatient.objects.all()
+
+    context = {
+        'patient_data':patient_data
+    }
+
+    return render(request, 'hms/list-patients.html',context)
+

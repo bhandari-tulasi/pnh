@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="container">
+  <section>
+    <div class="patient-form">
+      <form action="#" method="POST">
+        {% csrf_token %}
+        {{ form.as_div }}
+        {% comment %} <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputGrid"
+                placeholder="First Name"
+                value="First Name"
+              />
+              <label for="floatingInputGrid">First Name</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputGrid"
+                placeholder="Last Name"
+                value="Last Name"
+              />
+              <label for="floatingInputGrid">Last Name</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputGrid"
+                placeholder="Last Name"
+                value="Last Name"
+              />
+              <label for="floatingInputGrid">Last Name</label>
+            </div>
+          </div>
+         
+          <div class="col-md">
+            <div class="form-floating">
+              <select
+                class="form-select"
+                id="floatingSelectGrid"
+                aria-label="Floating label select"
+              >
+                <option selected>{{}}</option>
+                <option value="1"></option>
+                <option value="2"></option>
+                
+              </select>
+              <label for="floatingSelectGrid">Gender</label>
+            </div>
+          </div>
+        </div> {% endcomment %}
+        <input type="submit" value="Submit" class="btn btn-success" id="liveAlertBtn" />
+      </form>
+    </div>
+  </section>
+</div>
+{% endblock content %}

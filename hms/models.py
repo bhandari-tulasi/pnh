@@ -45,6 +45,8 @@ class NewPatient(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     is_revisit = models.BooleanField(default=False)
     #registration_date = models.DateTimeField(auto_now=True)
-
+    
+    class Meta:
+        ordering = ['first_name']
     def __str__(self):
-       return self.first_name + " " + self.last_name
+       return '{} - {} ({})'.format(self.pk, self.first_name, self.last_name )
