@@ -1,9 +1,408 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}Staffs | Pathari Nagar Hospital{% endblock %}
 {% block content %}
 
 <div class="container">
-    <div>Pathari Nagar Hosital Staff List</div>
+    <div>Pathari Nagar Hosital - Staffs </div>
+   
+    <div class="staffs">
+      <h3>HIB Claim</h3>
+      <div class="row">
+        {% for staff in staffs %}
+        <div class="col">
+          <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{% if staff.image %} {{staff.image.url}}
+                            {% else %}
+                            {% static "assets/img/no-image.png" %}
+                            {% endif %}" class="img-fluid rounded-start" alt="{{staff.name}}">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">{{staff.name}}</h6>
+                    <p class="card-text">{{staff.department}}</p>
+                    <p class="card-text"><small class="text-muted">{{staff.post}}</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col">
+          <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/hima_khatri.png" class="img-fluid rounded-start" alt="Hima Khatri">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Hima Khatri</h6>
+                    <p class="card-text">Administration Staff </p>
+                    <p class="card-text"><small class="text-muted">Asst. Accountant - 4th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col">
+            <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../static/assets/img/yam_khadka.png" class="img-fluid rounded-start" alt="Yam Bd. Khadka">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-title">Mr. Yam Bahadur Khadka</h6>
+                      <p class="card-text">Head - Administration </p>
+                      <p class="card-text"><small class="text-muted">S.A.H.W - 5th Level</small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../static/assets/img/rajendra_karki.png" class="img-fluid rounded-start" alt="Rajendra Bd. Karki" >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-title">Mr. Rajendra Bd. Karki</h6>
+                      <p class="card-text">Head - OPD </p>
+                      <p class="card-text">Information Officer </p>
+                      <p class="card-text"><small class="text-muted">P.H.I, 6th Level</small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../static/assets/img/dummy_user.png" class="img-fluid rounded-start" alt="Premlal Limbu">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-title">Mr. Premlal Limbu</h6>
+                      <p class="card-text">Head - Emergency</p>
+                      <p class="card-text"><small class="text-muted">P.H.I, 6th Level</small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../static/assets/img/ratnakala_gurung.png" class="img-fluid rounded-start" alt="Ratnakala Gurung">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-title">Mrs. Ratnakala Gurung</h6>
+                      <p class="card-text">HEAD - MCH </p>
+                      <p class="card-text"><small class="text-muted">S.A.N.M, 5th Level</small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/hangshu_limbu.png" class="img-fluid rounded-start" alt="Hangshu Limbu">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Hangshu Limbu</h6>
+                    <p class="card-text">Department - MCH</p>
+                    <p class="card-text"><small class="text-muted">S.A.N.M - 5th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/rabina_bk.png" class="img-fluid rounded-start" alt="Rabina Bk" >
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Rabina BK</h6>
+                    <p class="card-text">Department - MCH </p>
+                    <p class="card-text"><small class="text-muted">S.A.N.M - 5th</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/khadga_thakuri.png" class="img-fluid rounded-start" alt="Khadga Thakuri">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mr. Khadga Thakuri</h6>
+                    <p class="card-text">Head - HIB Claim Department</p>
+                    <p class="card-text"><small class="text-muted">A.H.W. 4th</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/aldina_gurung.png" class="img-fluid rounded-start" alt="Aldina Gurung">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Aldina Gurung</h6>
+                    <p class="card-text">OPD Team</p>
+                    <p class="card-text"><small class="text-muted">A.H.W - 4th</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      
+      
+          
+    </div>
+    <div class="row">
+      <div class="col">
+          <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/samala_rai.png" class="img-fluid rounded-start" alt="Samala Rai">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Samala Rai</h6>
+                    <p class="card-text">Head - Pharmacy  </p>
+                    <p class="card-text"><small class="text-muted">Pharmacist - 5th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/img/kajol_dhimal.png" class="img-fluid rounded-start" alt="Kajol Dhimal">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">Mrs. Kajol Dhimal</h6>
+                  <p class="card-text">Team - X-Ray  </p>
+                  <p class="card-text"><small class="text-muted">Radiographer - 5th Level</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/img/sarita_magar.png" class="img-fluid rounded-start" alt="Sarita Magar">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">Mrs. Sarita Magar</h6>
+                  <p class="card-text">Team - X-Ray</p>
+                  <p class="card-text"><small class="text-muted">Radiographer - 5th Level</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/hima_khatri.png" class="img-fluid rounded-start" alt="Hima Khatri">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Hima Khatri</h6>
+                    <p class="card-text">Administration </p>
+                    <p class="card-text"><small class="text-muted">Asst. Accountant - 4th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <div class="card  text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/bhumika_gurung.png" class="img-fluid rounded-start" alt="Bhumika Gurung">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Bhumika Gurung</h6>
+                    <p class="card-text">HIB Claim Department </p>
+                    <p class="card-text"><small class="text-muted">Data Entry - 4th Level </small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/sangita_jogi.png" class="img-fluid rounded-start" alt="Sangita Jogi" >
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mrs. Sangita Jogi</h6>
+                    <p class="card-text">HIB Claim Department </p>
+                    <p class="card-text"><small class="text-muted">Data Entry - 4th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/suman_stha.png" class="img-fluid rounded-start" alt="Suman Shrestha" ">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mr. Suman Shrestha</h6>
+                    <p class="card-text">IT </p>
+                    <p class="card-text"><small class="text-muted">Asst. Computer Operator - 4th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/dummy_user.png" class="img-fluid rounded-start" alt="Dinesh Bhattarai">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mr. Dinesh Bhattarai</h6>
+                    <p class="card-text">OPD Team </p>
+                    <p class="card-text"><small class="text-muted">A.H.W - 4th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      
+      
+          
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/img/ranjana_dahal.png" class="img-fluid rounded-start" alt="Ranjana Dahal">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">Mrs. Ranjana Dahal</h6>
+                  <p class="card-text">Head Store</p>
+                  <p class="card-text"><small class="text-muted">S.A.H.W - 5th Level</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/img/dikshya_gautam.png" class="img-fluid rounded-start" alt="dikshya gautam">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">Ms. Dikshya Gautam</h6>
+                  <p class="card-text">Department - Pathology  </p>
+                  <p class="card-text"><small class="text-muted">Lab Assistant - 4th Level</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+          <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="../static/assets/img/nirmal_singh.png" class="img-fluid rounded-start" alt="Nirmal Singh">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">Mr. Niram Kumar Singh</h6>
+                    <p class="card-text">Head - Pathology  </p>
+                    <p class="card-text"><small class="text-muted">Lab Assistant - 4th Level</small></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/img/images.jpg" class="img-fluid rounded-start" alt="Tulasi Bhandari">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">Mr. Tulasi Bhandari</h6>
+                  <p class="card-text">IT  </p>
+                  <p class="card-text"><small class="text-muted">Asst.Computer Operator - 4th Level</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/img/pabina_rai.png" class="img-fluid rounded-start" alt="Ranjana Dahal">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">Ms. Pabina Rai</h6>
+                  <p class="card-text">Head Refer</p>
+                  <p class="card-text"><small class="text-muted">A.H.W - 4th Level</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div> -->
 </div>
 
 

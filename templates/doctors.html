@@ -1,13 +1,74 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %} Doctors | Pathari Nagar Hospital{% endblock %}
 {% block content %}
 
 <!-- Doctor's image gallery codes goes here -->
-<div class="mx-auto" style="width: 200px;">
-  <picture>
-      <source srcset="..." type="image/svg+xml">
-      <img src="{% static 'assets/img/doc1.jpg' %}" class="img-fluid img-thumbnail" alt="...">
-    </picture>
+<div class="container">
+  <div class="doctor-gallery" >
+    Our Doctors
+  </div>
+  <div class="row">
+    <div class="col">
+        <div class="card  text-info bg-white mb-3" style="max-width: 340px;">
+            <div class="row g-0">
+              <div class="col-md-12">
+                <img src="../static/assets/img/dr_bheshraj_pokhrel.png" class="img-fluid" alt="Dr. Bheshraj Pokhrel" style="border-bottom: 5px solid #2460b9;"">
+              </div>
+              <div class="col-md-auto">
+                <div class="card-body">
+                  <h6 class="card-title">Dr. Bheshraj Pokhrel</h6>
+                  <p class="card-text">Medical Officer, Act. Medical Superintended </p>
+                  <p class="card-text"><small class="text-muted">MBBS </small></p>
+                  <p class="card-text"><small class="text-muted">NMC: 30088</small></p>
+                  <p class="card-text"><small class="text-muted">9810000000 </small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+      <div class="card  text-info bg-white mb-3" style="max-width: 340px;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <img src="../static/assets/img/dr_pragyan.png" class="img-fluid " alt="Dr. Pragyan Basnet" style="border-bottom: 5px solid #2460b9;">
+            </div>
+            <div class="col-md-auto">
+              <div class="card-body">
+                <h6 class="card-title">Dr. Pragyan Basnet</h6>
+                <p class="card-text">Medical Officer </p>
+                <p class="card-text"><small class="text-muted">MBBS</small></p>
+                <p class="card-text"><small class="text-muted">NMC: 29566</small></p>
+                <p class="card-text"><small class="text-muted">9810000000 </small></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card  text-info bg-white mb-3" style="max-width: 340px;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <img src="../static/assets/img/dr_swoyam_upreti.png" class="img-fluid" alt="Dr. Swayam Upreti" style="border-bottom: 5px solid #2460b9;"">
+            </div>
+            <div class="col-md-auto">
+              <div class="card-body">
+                <h6 class="card-title">Dr. Swayam Upreti</h6>
+                <p class="card-text">Medical Officer </p>
+                <p class="card-text"><small class="text-muted">MBBS </small></p>
+                <p class="card-text"><small class="text-muted">NMC: 21335 </small></p>
+                <p class="card-text"><small class="text-muted">9810000000 </small></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+    
+        
+  </div>
+  
 </div>
 
 
